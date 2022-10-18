@@ -1,3 +1,23 @@
+# IIC-OSIC Tools Sanguisorba private version
+with my configurations
+
+# Requirements
+* Windows Subsystem for Linux Preview
+* WSL2
+* Ubuntu WSL (Latest or Preview)
+
+# Setup
+
+* Setup Ubuntu WSL (Username, Password etc)
+* Just type
+
+```shell
+git clone https://github.com/sanguisorba/iic-osic-wsl.git
+cd iic-osic-wsl
+./iic-osic-setup.sh
+```
+... that's all.
+
 # IIC-OSIC Tools
 
 ## (c) 2021-2022 Harald Pretl, Johannes Kepler University Linz, Institute for Integrated Circuits
