@@ -52,7 +52,7 @@ sudo apt -qq upgrade -y
 # Copy KLayout Configurations
 # ----------------------------------
 cp -rf klayout $HOME/.klayout
-mkdir $HOME/.klayoutlibraries
+mkdir $HOME/.klayout/libraries
 
 # Optional removal of unneeded packages to free up space, important for VirtualBox
 # --------------------------------------------------------------------------------
