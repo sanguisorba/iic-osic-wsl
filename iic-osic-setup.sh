@@ -132,14 +132,10 @@ echo "source $SCRIPT_DIR/iic-magic-bindkeys" 	>> "$PDK_ROOT/$PDK/libs.tech/magic
 
 # Install/Update KLayout
 # ---------------------
-if [ ! -d  "$SRC_DIR/klayout" ]; then
-	echo ">>>> Installing KLayout-$KLAYOUT_VERSION"
-	cd "$SRC_DIR" || exit
-	wget https://www.klayout.org/downloads/Ubuntu-22/klayout_$KLAYOUT_VERSION-1_amd64.deb
-	sudo apt -qq install -y klayout_$KLAYOUT_VERSION-1_amd64.deb
-	rm klayout_$KLAYOUT_VERSION-1_amd64.deb
-fi
-
+echo ">>>> Installing KLayout-$KLAYOUT_VERSION"
+wget https://www.klayout.org/downloads/Ubuntu-22/klayout_$KLAYOUT_VERSION-1_amd64.deb
+sudo apt -qq install -y klayout_$KLAYOUT_VERSION-1_amd64.deb
+rm klayout_$KLAYOUT_VERSION-1_amd64.deb
 
 # Install/update xschem
 # ---------------------
