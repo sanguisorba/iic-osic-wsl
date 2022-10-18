@@ -4,7 +4,7 @@ with my configurations
 # Requirements
 * Windows Subsystem for Linux Preview
 * WSL2
-* Ubuntu WSL (Latest or Preview)
+* Ubuntu WSL (Latest or LTS)
 
 # Setup
 
