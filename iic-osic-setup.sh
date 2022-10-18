@@ -49,6 +49,10 @@ sudo sed -i 's/# deb-src/deb-src/g' /etc/apt/sources.list
 sudo apt -qq update -y
 sudo apt -qq upgrade -y
 
+# Copy KLayout Configurations
+# ----------------------------------
+cp -rf klayout $HOME/.klayout
+mkdir $HOME/.klayoutlibraries
 
 # Optional removal of unneeded packages to free up space, important for VirtualBox
 # --------------------------------------------------------------------------------
@@ -298,8 +302,4 @@ export PDK=$MY_PDK
 export STD_CELL_LIBRARY=$MY_STDCELL
 cp -f $PDK_ROOT/$PDK/libs.tech/xschem/xschemrc $HOME/.xschem
 cp -f $PDK_ROOT/$PDK/libs.tech/magic/$PDK.magicrc $HOME/.magicrc
-cd $HOME/iic-osic-wsl
-mv klayout $HOME/.klayout
-cd $HOME/.klayout
-mkdir libraries
 cp -f $PDK_ROOT/$PDK/libs.ref/sky130_fd_pr/gds/sky130_fd_pr.gds $HOME/.klayout/libraries/
