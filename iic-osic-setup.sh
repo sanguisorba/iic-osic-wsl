@@ -279,7 +279,6 @@ if [ ! -d "$HOME/.xschem" ]; then
 	mkdir "$HOME/.xschem"
 fi
 {
-	echo '#!/bin/sh'
 	echo '#'
 	echo '# (c) 2021-2022 Harald Pretl'
 	echo '# Institute for Integrated Circuits'
@@ -288,7 +287,7 @@ fi
 	echo "export PDK_ROOT=$MY_PDK_ROOT"
 	echo "export PDK=$MY_PDK"
 	echo "export STD_CELL_LIBRARY=$MY_STDCELL"
-} > "$HOME/.bashrc"
+} >> "$HOME/.bashrc"
 
 # Finished
 # --------
