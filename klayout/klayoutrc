@@ -27,7 +27,7 @@
  <context-color>auto</context-color>
  <context-dimming>50</context-dimming>
  <context-hollow>false</context-hollow>
- <current-lib-view/>
+ <current-lib-view>sky130_fd_pr</current-lib-view>
  <current-ruler-template>0</current-ruler-template>
  <custom-macro-paths/>
  <dbu-units>false</dbu-units>
@@ -54,10 +54,11 @@
  <edit-hier-copy-mode>-1</edit-hier-copy-mode>
  <edit-inst-angle>0</edit-inst-angle>
  <edit-inst-array>false</edit-inst-array>
- <edit-inst-cell-name/>
+ <edit-inst-cell-name>sky130_fd_pr__rf_nfet_01v8_aM02W1p65L0p15</edit-inst-cell-name>
  <edit-inst-column_x>0.0</edit-inst-column_x>
  <edit-inst-column_y>0.0</edit-inst-column_y>
  <edit-inst-columns>1</edit-inst-columns>
+ <edit-inst-lib-name>sky130_fd_pr</edit-inst-lib-name>
  <edit-inst-mirror>false</edit-inst-mirror>
  <edit-inst-pcell-parameters/>
  <edit-inst-place-origin>false</edit-inst-place-origin>
@@ -72,6 +73,7 @@
  <edit-path-ext-var-begin>0.0</edit-path-ext-var-begin>
  <edit-path-ext-var-end>0.0</edit-path-ext-var-end>
  <edit-path-width>0.1</edit-path-width>
+ <edit-recent-inst-param>sky130_fd_pr,sky130_fd_pr__rf_nfet_01v8_aM02W1p65L0p15,'0',false,'1.0',false,'1','0.0','0.0','1','0.0','0.0','',;sky130_fd_pr,sky130_fd_pr__cap_vpp_02p7x21p1_m1m2m3m4_shieldl1_fingercap,'0',false,'1.0',false,'1','0.0','0.0','1','0.0','0.0','',</edit-recent-inst-param>
  <edit-show-shapes-of-instances>true</edit-show-shapes-of-instances>
  <edit-snap-to-objects>false</edit-snap-to-objects>
  <edit-text-halign>left</edit-text-halign>
@@ -158,7 +160,7 @@
  <mouse-wheel-mode>0</mouse-wheel-mode>
  <mru>'/home/user/xschem/inv_test.gds'@'sky130A'</mru>
  <mru-bookmarks/>
- <mru-layer-properties/>
+ <mru-layer-properties>'/home/user/sky130.lyp'</mru-layer-properties>
  <mru-sessions/>
  <navigator-show-all-hier-levels>false</navigator-show-all-hier-levels>
  <navigator-show-images>true</navigator-show-images>
@@ -450,8 +452,8 @@
  <tip-window-hidden>only-top-level-shown-by-default=3,macro-editor-basic-tips=4,macro-editor-basic-tips=0</tip-window-hidden>
  <tracking-cursor-color>auto</tracking-cursor-color>
  <tracking-cursor-enabled>true</tracking-cursor-enabled>
- <window-geometry>AdnQywADAAAAAAdo////5wAADycAAAQuAAAHjgAAACIAAA8BAAAECAAAAAAAAAAAB4AAAAeOAAAAIgAADwEAAAQI</window-geometry>
- <window-state>AAAA/wAAAAD9AAAAAgAAAAAAAAC2AAADf/wCAAAABPsAAAAqAG4AYQB2AGkAZwBhAHQAbwByAF8AZABvAGMAawBfAHcAaQBkAGcAZQB0AAAAAAD/////AAAAjwD////7AAAAHABoAHAAXwBkAG8AYwBrAF8AdwBpAGQAZwBlAHQBAAAAUgAAAb0AAAATAP////sAAAAgAGwAaQBiAHMAXwBkAG8AYwBrAF8AdwBpAGQAZwBlAHQBAAACFQAAAbwAAAATAP////sAAAAcAGUAbwBfAGQAbwBjAGsAXwB3AGkAZABnAGUAdAAAAAAA/////wAAAJYA////AAAAAQAAAJQAAAN//AIAAAAD+wAAACoAYgBvAG8AawBtAGEAcgBrAHMAXwBkAG8AYwBrAF8AdwBpAGQAZwBlAHQAAAAAAP////8AAAATAP////sAAAAcAGwAcABfAGQAbwBjAGsAXwB3AGkAZABnAGUAdAEAAABSAAAC6AAAABMA////+wAAABwAbAB0AF8AZABvAGMAawBfAHcAaQBkAGcAZQB0AQAAA0AAAACRAAAAkQAAAJEAAAYeAAADfwAAAAQAAAAEAAAACAAAAAj8AAAAAQAAAAIAAAABAAAADgB0AG8AbwBsAGIAYQByAQAAAAD/////AAAAAAAAAAA=</window-state>
+ <window-geometry>AdnQywADAAAAAAdk////5AAADyMAAAQrAAAHigAAAB8AAA79AAAEBQAAAAAAAAAAB4AAAAeKAAAAHwAADv0AAAQF</window-geometry>
+ <window-state>AAAA/wAAAAD9AAAAAgAAAAAAAAIPAAADf/wCAAAABPsAAAAqAG4AYQB2AGkAZwBhAHQAbwByAF8AZABvAGMAawBfAHcAaQBkAGcAZQB0AAAAAAD/////AAAAjwD////7AAAAHABoAHAAXwBkAG8AYwBrAF8AdwBpAGQAZwBlAHQBAAAAUgAAAb0AAAATAP////sAAAAgAGwAaQBiAHMAXwBkAG8AYwBrAF8AdwBpAGQAZwBlAHQBAAACFQAAAbwAAAATAP////sAAAAcAGUAbwBfAGQAbwBjAGsAXwB3AGkAZABnAGUAdAAAAAM7AAAAlgAAAJYA////AAAAAQAAAJQAAAN//AIAAAAD+wAAACoAYgBvAG8AawBtAGEAcgBrAHMAXwBkAG8AYwBrAF8AdwBpAGQAZwBlAHQAAAAAAP////8AAAATAP////sAAAAcAGwAcABfAGQAbwBjAGsAXwB3AGkAZABnAGUAdAEAAABSAAAC6AAAABMA////+wAAABwAbAB0AF8AZABvAGMAawBfAHcAaQBkAGcAZQB0AQAAA0AAAACRAAAAkQAAAJEAAATFAAADfwAAAAQAAAAEAAAACAAAAAj8AAAAAQAAAAIAAAABAAAADgB0AG8AbwBsAGIAYQByAQAAAAD/////AAAAAAAAAAA=</window-state>
  <xor-anotb>false</xor-anotb>
  <xor-axorb>true</xor-axorb>
  <xor-bnota>false</xor-bnota>
