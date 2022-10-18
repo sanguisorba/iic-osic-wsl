@@ -288,7 +288,7 @@ fi
 	echo "export PDK_ROOT=$MY_PDK_ROOT"
 	echo "export PDK=$MY_PDK"
 	echo "export STD_CELL_LIBRARY=$MY_STDCELL"
-} > "$HOME/iic-init.sh"
+} > "$HOME/.bashrc"
 chmod 750 "$HOME/iic-init.sh"
 
 
