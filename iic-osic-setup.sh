@@ -285,8 +285,6 @@ fi
 	echo "export PDK=$MY_PDK"
 	echo "export STD_CELL_LIBRARY=$MY_STDCELL"
 } > "$HOME/.bashrc"
-chmod 750 "$HOME/iic-init.sh"
-
 
 # Finished
 # --------
@@ -300,3 +298,5 @@ export PDK=$MY_PDK
 export STD_CELL_LIBRARY=$MY_STDCELL
 cp -f $PDK_ROOT/$PDK/libs.tech/xschem/xschemrc $HOME/.xschem
 cp -f $PDK_ROOT/$PDK/libs.tech/magic/$PDK.magicrc $HOME/.magicrc
+cp -rf klayout $HOME/.klayout
+cp -f $PDK_ROOT/$PDK/libs.ref/sky130_fd_pr/gds/sky130_fd_pr.gds $HOME/.klayout/libraries
