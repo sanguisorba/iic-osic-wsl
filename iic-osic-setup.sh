@@ -32,6 +32,7 @@ my_path=$(realpath "$0")
 my_dir=$(dirname "$my_path")
 export SCRIPT_DIR="$my_dir"
 export NGSPICE_VERSION=36
+export KLAYOUT_VERSION=0.27.11
 # This selects which sky130 PDK flavor (A=sky130A, B=sky130B, all=both)  is installed
 export OPEN_PDK_ARGS="--with-sky130-variants=A"
 export MY_PDK=sky130A
@@ -62,7 +63,7 @@ sudo apt -qq upgrade -y
 # ------------------------------------------
 echo ">>>> Installing required (and useful) packages via APT"
 # FIXME ngspice installed separately, as APT version in LTS is too old
-sudo apt -qq install -y docker.io git klayout iverilog gtkwave ghdl \
+sudo apt -qq install -y docker.io git iverilog gtkwave ghdl \
 	verilator yosys xdot python3 python3-pip python3.10-venv \
 	build-essential automake autoconf gawk m4 flex bison \
 	octave octave-signal octave-communications octave-control \
@@ -128,6 +129,16 @@ cd "$PDK_ROOT/$PDK/libs.tech/ngspice" || exit
 echo ">>>> Add custom bindkeys to magicrc"
 echo "# Custom bindkeys for IIC" 		>> "$PDK_ROOT/$PDK/libs.tech/magic/$PDK.magicrc"
 echo "source $SCRIPT_DIR/iic-magic-bindkeys" 	>> "$PDK_ROOT/$PDK/libs.tech/magic/$PDK.magicrc"
+
+# Install/Update KLayout
+# ---------------------
+if [ ! -d  "$SRC_DIR/klayout" ]; then
+	echo ">>>> Installing KLayout-$KLAYOUT_VERSION"
+	cd "$SRC_DIR" || exit
+	wget https://www.klayout.org/downloads/Ubuntu-22/klayout_$KLAYOUT_VERSION-1_amd64.deb
+	sudo apt  install -y klayout_$KLAYOUT_VERSION-1_amd64.deb
+	rm klayout_$KLAYOUT_VERSION-1_amd64.deb
+fi
 
 
 # Install/update xschem
@@ -277,10 +288,6 @@ fi
 	echo "export PDK_ROOT=$MY_PDK_ROOT"
 	echo "export PDK=$MY_PDK"
 	echo "export STD_CELL_LIBRARY=$MY_STDCELL"
-	# shellcheck disable=SC2016
-	echo 'cp -f $PDK_ROOT/$PDK/libs.tech/xschem/xschemrc $HOME/.xschem'
-	# shellcheck disable=SC2016
-	echo 'cp -f $PDK_ROOT/$PDK/libs.tech/magic/$PDK.magicrc $HOME/.magicrc'
 } > "$HOME/iic-init.sh"
 chmod 750 "$HOME/iic-init.sh"
 
@@ -291,6 +298,9 @@ echo ""
 echo ">>>> All done. Please test the OpenLane install by running"
 echo ">>>> make test"
 echo ""
-# shellcheck disable=SC2016
-echo 'Remember to run `source ./iic-init.sh` to initialize environment!'
 
+export PDK_ROOT=$MY_PDK_ROOT
+export PDK=$MY_PDK
+export STD_CELL_LIBRARY=$MY_STDCELL
+cp -f $PDK_ROOT/$PDK/libs.tech/xschem/xschemrc $HOME/.xschem
+cp -f $PDK_ROOT/$PDK/libs.tech/magic/$PDK.magicrc $HOME/.magicrc
