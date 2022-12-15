@@ -1,5 +1,8 @@
 # IIC-OSIC Tools Sanguisorba private version
-with my configurations
+
+* Add my configurations
+* Add Docker setup
+* Add KLayout setup
 
 # Requirements
 * Windows Subsystem for Linux Preview
