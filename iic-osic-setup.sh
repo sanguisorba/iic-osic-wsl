@@ -97,6 +97,7 @@ fi
 sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
 sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
 sudo usermod -aG docker "$USER"
+sudo chmod 666 /var/run/docker.sock
 sudo service docker start
 
 # Create PDK directory if it does not yet exist
