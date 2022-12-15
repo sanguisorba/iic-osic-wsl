@@ -7,7 +7,7 @@
 # Requirements
 * Windows Subsystem for Linux Preview
 * WSL2
-* Ubuntu WSL (Latest or LTS)
+* Ubuntu WSL (Latest or LTS 22)
 
 # Setup
 
