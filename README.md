@@ -5,7 +5,9 @@
 * Add KLayout setup
 
 # Requirements
-* Windows Subsystem for Linux Preview
+* ~~Windows Subsystem for Linux Preview~~ 
+perhaps no longer needed if you use the latest WSL engine.
+
 * WSL2
 * Ubuntu WSL (Latest or LTS 22)
 
