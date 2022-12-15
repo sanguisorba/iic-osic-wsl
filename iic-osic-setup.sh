@@ -181,14 +181,12 @@ if [ ! -d "$SRC_DIR/xschem-gaw" ]; then
         aclocal && automake --add-missing && autoconf
 	./configure
 	# FIXME this is just a WA for 20.04 LTS
-	UBUNTU_RELEASE=$(lsb_release -r)
-	if [ "$UBUNTU_RELEASE" = "*20.04*" ]; then
-		sed -i 's/GETTEXT_MACRO_VERSION = 0.20/GETTEXT_MACRO_VERSION = 0.19/g' po/Makefile
-	fi
-	# ... and 22.04 LTS too.
-	if [ "$UBUNTU_RELEASE" = "*22.04*" ]; then
-		sed -i 's/GETTEXT_MACRO_VERSION = 0.18/GETTEXT_MACRO_VERSION = 0.20/g' po/Makefile
-	fi
+	#UBUNTU_RELEASE=$(lsb_release -r)
+	#if [ "$UBUNTU_RELEASE" = "*20.04*" ]; then
+	#	sed -i 's/GETTEXT_MACRO_VERSION = 0.20/GETTEXT_MACRO_VERSION = 0.19/g' po/Makefile
+	#fi
+	# you have to change gettext version for Ubuntu 22.04 LTS...
+	sed -i 's/GETTEXT_MACRO_VERSION = 0.18/GETTEXT_MACRO_VERSION = 0.20/g' po/Makefile.in.in
 else
 	echo ">>>> Updating gaw"
         cd "$SRC_DIR/xschem-gaw" || exit
