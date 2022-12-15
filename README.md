@@ -10,7 +10,7 @@ perhaps no longer needed if you use the latest WSL engine.
 * WSL2
 * Ubuntu WSL (Latest or LTS 22)
 
-Not tested for *vanila* Ubuntu on VM or real PC.
+Not tested for *vanila* Ubuntu on a virtual machine or a real PC.
 
 # Setup
 
