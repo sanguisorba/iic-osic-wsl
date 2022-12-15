@@ -186,6 +186,10 @@ if [ ! -d "$SRC_DIR/xschem-gaw" ]; then
 	if [ "$UBUNTU_RELEASE" = "*20.04*" ]; then
 		sed -i 's/GETTEXT_MACRO_VERSION = 0.20/GETTEXT_MACRO_VERSION = 0.19/g' po/Makefile
 	fi
+	# ... and 22.04 LTS too.
+	if [ "$UBUNTU_RELEASE" = "*22.04*" ]; then
+		sed -i 's/GETTEXT_MACRO_VERSION = 0.21/GETTEXT_MACRO_VERSION = 0.20/g' po/Makefile
+	fi
 else
 	echo ">>>> Updating gaw"
         cd "$SRC_DIR/xschem-gaw" || exit
