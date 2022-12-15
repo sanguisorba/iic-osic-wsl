@@ -171,30 +171,6 @@ else
 fi
 make -j"$(nproc)" && sudo make install
 
-
-# Install/update xschem-gaw
-# -------------------------
-if [ ! -d "$SRC_DIR/xschem-gaw" ]; then
-	echo ">>>> Installing gaw"
-        git clone https://github.com/StefanSchippers/xschem-gaw.git "$SRC_DIR/xschem-gaw"
-        cd "$SRC_DIR/xschem-gaw" || exit
-        aclocal && automake --add-missing && autoconf
-	./configure
-	# FIXME this is just a WA for 20.04 LTS
-	#UBUNTU_RELEASE=$(lsb_release -r)
-	#if [ "$UBUNTU_RELEASE" = "*20.04*" ]; then
-	#	sed -i 's/GETTEXT_MACRO_VERSION = 0.20/GETTEXT_MACRO_VERSION = 0.19/g' po/Makefile
-	#fi
-	# you have to change gettext version for Ubuntu 22.04 LTS...
-	sed -i 's/GETTEXT_MACRO_VERSION = 0.18/GETTEXT_MACRO_VERSION = 0.20/g' po/Makefile.in.in
-else
-	echo ">>>> Updating gaw"
-        cd "$SRC_DIR/xschem-gaw" || exit
-        git pull
-fi
-make -j"$(nproc)" && sudo make install
-
-
 # Install/update xschem_sky130
 # ----------------------------
 # FIXME eventually this step is not required, as xschem_sky130 is contained in OpenLane
@@ -272,6 +248,27 @@ else
 fi
 sudo python3 setup.py install
 
+# Install/update xschem-gaw
+# -------------------------
+if [ ! -d "$SRC_DIR/xschem-gaw" ]; then
+	echo ">>>> Installing gaw"
+	git clone https://github.com/StefanSchippers/xschem-gaw.git "$SRC_DIR/xschem-gaw"
+	cd "$SRC_DIR/xschem-gaw" || exit
+	aclocal && automake --add-missing && autoconf
+	# FIXME this is just a WA for 20.04 LTS
+	#UBUNTU_RELEASE=$(lsb_release -r)
+	#if [ "$UBUNTU_RELEASE" = "*20.04*" ]; then
+	#	sed -i 's/GETTEXT_MACRO_VERSION = 0.20/GETTEXT_MACRO_VERSION = 0.19/g' po/Makefile.in.in
+	#fi
+	# you have to change gettext version for Ubuntu 22.04 LTS...
+	sed -i 's/GETTEXT_MACRO_VERSION = 0.18/GETTEXT_MACRO_VERSION = 0.20/g' po/Makefile.in.in
+	./configure
+else
+	echo ">>>> Updating gaw"
+        cd "$SRC_DIR/xschem-gaw" || exit
+        git pull
+fi
+make -j"$(nproc)" && sudo make install
 
 # Fix paths in xschemrc to point to correct PDK directory
 # -------------------------------------------------------
