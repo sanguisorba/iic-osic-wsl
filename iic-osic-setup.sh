@@ -98,7 +98,6 @@ sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
 sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
 sudo usermod -aG docker "$USER"
 sudo service docker start
-sudo chmod 666 /var/run/docker.sock
 
 # Create PDK directory if it does not yet exist
 # ---------------------------------------------
@@ -124,11 +123,11 @@ else
 	git clone https://github.com/The-OpenROAD-Project/OpenLane.git "$OPENLANE_DIR"
 fi
 
-
 # Update OpenLane
 # ---------------
 cd "$OPENLANE_DIR" || exit
 echo ">>>> Pulling latest OpenLane version"
+sudo chmod 666 /var/run/docker.sock
 make pull-openlane
 echo ">>>> Creating/updating PDK"
 rm -rf "$PDK_ROOT/skywater-pdk" # FIXME WA otherwise `git clone` fails
