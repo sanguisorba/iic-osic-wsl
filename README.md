@@ -1,4 +1,4 @@
-# IIC-OSIC Tools Sanguisorba private version
+# IIC-OSIC Tools for Ubuntu WSL
 
 * Add my configurations
 * Add Docker setup
