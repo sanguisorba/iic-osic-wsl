@@ -83,6 +83,8 @@ make -j"$(nproc)"
 cd $SRC_DIR/xyce/src
 make -j"$(nproc)" && sudo make install
 
+/usr/bin/printf "export PATH=\x24PATH:\x24HOME/xyce/serial/bin\n" >> "$HOME/.bashrc"
+
 echo ""
 echo ">>>> All done."
 echo ""
