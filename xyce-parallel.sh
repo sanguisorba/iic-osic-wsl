@@ -84,7 +84,7 @@ else
 fi
 ./configure \
 CXXFLAGS="-O3" \
-ARCHDIR="$SRC_DIR/trilinos_libs/serial" \
+ARCHDIR="$SRC_DIR/trilinos_libs/parallel" \
 CPPFLAGS="-I/usr/include/suitesparse" \
 --enable-mpi \
 CXX=mpicxx CC=mpicc F77=mpif77 \
