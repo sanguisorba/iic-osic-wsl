@@ -51,12 +51,8 @@ sudo apt -qq upgrade -y
 
 # Copy KLayout Configurations
 # ----------------------------------
-if [ ! -d "$HOME/.klayout" ]; then
-	# cp -rf klayout $HOME/.klayout
-	mkdir $HOME/.klayout
-	cp -f klayout/klayoutrc $HOME/.klayout
-	mkdir $HOME/.klayout/libraries
-fi
+cp -rf klayout $HOME/.klayout
+mkdir $HOME/.klayout/libraries
 
 # Optional removal of unneeded packages to free up space, important for VirtualBox
 # --------------------------------------------------------------------------------
@@ -159,7 +155,6 @@ echo ">>>> Installing KLayout-$KLAYOUT_VERSION"
 wget https://www.klayout.org/downloads/Ubuntu-22/klayout_$KLAYOUT_VERSION-1_amd64.deb
 sudo apt -qq install -y ./klayout_$KLAYOUT_VERSION-1_amd64.deb
 rm klayout_$KLAYOUT_VERSION-1_amd64.deb
-pip install docopt pandas
 
 # Install/update xschem
 # ---------------------
@@ -320,15 +315,6 @@ export PDK=$MY_PDK
 export STD_CELL_LIBRARY=$MY_STDCELL
 cp -f $PDK_ROOT/$PDK/libs.tech/xschem/xschemrc $HOME/.xschem
 cp -f $PDK_ROOT/$PDK/libs.tech/magic/$PDK.magicrc $HOME/.magicrc
-cp -rf $PDK_ROOT/$PDK/libs.tech/klayout/drc $HOME/.klayout/drc
-cp -rf $PDK_ROOT/$PDK/libs.tech/klayout/lvs $HOME/.klayout/lvs
-cp -rf $PDK_ROOT/$PDK/libs.tech/klayout/pymacros $HOME/.klayout/pymacros
-cp -rf $PDK_ROOT/$PDK/libs.tech/klayout/scripts $HOME/.klayout/scripts
-mkdir $HOME/.klayout/tech/
-mkdir $HOME/.klayout/tech/sky130
-cp -f $PDK_ROOT/$PDK/libs.tech/klayout/tech/$PDK.lyp $HOME/.klayout/tech/sky130/sky130.lyp
-cp -f $PDK_ROOT/$PDK/libs.tech/klayout/tech/$PDK.lyt $HOME/.klayout/tech/sky130/sky130.lyt
-
 cp -f $PDK_ROOT/$PDK/libs.ref/sky130_fd_pr/gds/sky130_fd_pr.gds $HOME/.klayout/libraries/
 cp -f $PDK_ROOT/$PDK/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds $HOME/.klayout/libraries/
 cp -f $PDK_ROOT/$PDK/libs.ref/sky130_fd_sc_hvl/gds/sky130_fd_sc_hvl.gds $HOME/.klayout/libraries/
