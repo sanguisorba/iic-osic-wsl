@@ -22,9 +22,9 @@ echo ">>>> Installing required (and useful) packages via APT"
 sudo apt -qq install -y gcc g++ gfortran make cmake bison flex libfl-dev libfftw3-dev \
 	libsuitesparse-dev libblas-dev liblapack-dev libtool autoconf automake
 
-# Install trilinos 12.12.1
+# Get trilinos 12.12.1
 # ------------------------
-if [ ! -d  "$SRC_DIR/trilinos_libs/serial" ]; then
+if [ ! -d  "$SRC_DIR/Trilinos12.12" ]; then
 	echo ">>>> Installing trilinos 12.12.1"
 	mkdir "$SRC_DIR/Trilinos12.12"
 	cd "$SRC_DIR/Trilinos12.12" || exit
@@ -32,6 +32,12 @@ if [ ! -d  "$SRC_DIR/trilinos_libs/serial" ]; then
 	gunzip trilinos-release-12-12-1.tar.gz
 	tar xf trilinos-release-12-12-1.tar
 	rm trilinos-release-12-12-1.tar
+fi
+
+# Install trilinos 12.12.1
+# ------------------------
+if [ ! -d  "$SRC_DIR/trilinos_libs/serial" ]; then
+	cd "$SRC_DIR/Trilinos12.12" || exit
 	cd "Trilinos-trilinos-release-12-12-1"
 	rm -rf CMakeCache.txt CMakeFiles/
 	cd ..
