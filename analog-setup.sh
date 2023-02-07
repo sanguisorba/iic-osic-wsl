@@ -30,10 +30,11 @@ export SRC_DIR="$HOME/src"
 my_path=$(realpath "$0")
 my_dir=$(dirname "$my_path")
 export SCRIPT_DIR="$my_dir"
-export KLAYOUT_VERSION=0.28.2
+export KLAYOUT_VERSION=0.28.5
 # This selects which sky130 PDK flavor (A=sky130A, B=sky130B, all=both)  is installed
 export OPEN_PDK_ARGS="--with-sky130-variants=A"
 export PDK=sky130A
+export VOLARE_H=032b059033c4cf67f94c5b7f0a44d936b8ff5aae
 
 # ---------------
 # Now go to work!
@@ -87,10 +88,16 @@ echo ">>>> Installing PDK"
 sudo mkdir "$PDK_ROOT"
 sudo chown "$USER:staff" "$PDK_ROOT"
 cd "$PDK_ROOT" || exit
-wget https://github.com/sanguisorba/sky130pdk/releases/download/sky130A/pdk.tar.gz
-gunzip pdk.tar.gz
-tar xf pdk.tar
-rm pdk.tar
+if [ ! -d "$SRC_DIR/volare" ]; then
+	git clone https://github.com/efabless/volare.git "$SRC_DIR/volare"
+	cd "$SRC_DIR/volare" || exit
+else
+	echo ">>>> Updating xschem"
+	cd "$SRC_DIR/volare" || exit
+	git pull
+fi
+python3 -m pip install --upgrade --no-cache-dir volare
+volare enable --pdk sky130 $VOLARE_H
 
 # Apply SPICE modellib reducer
 # ----------------------------
