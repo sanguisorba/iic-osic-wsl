@@ -1,5 +1,5 @@
 # Useful bindkeys for Magic VLSI
-# (c) 2021-2022 Harald Pretl
+# (c) 2021-2023 Harald Pretl
 # Institute for Integrated Circuits, Johannes Kepler University Linz
 
 macro 0 "see no * ; see locali ; see mcon"
@@ -27,3 +27,13 @@ macro K "magic::unmeasure"
 macro q "magic::gencell {} ; raise .params"
 macro y "drc check ; drc why"
 macro ? "select area ; what"
+
+# Zoom on cursor using mouse scrollwheel, and left/right scroll
+# with CTRL-scrollwheel (SHFT-scrollwheel moves up/down)
+
+macro Control_XK_Pointer_Button4 "scroll l .05 w"
+macro Control_XK_Pointer_Button5 "scroll r .05 w"
+macro Shift_XK_Pointer_Button4 "scroll u .05 w"
+macro Shift_XK_Pointer_Button5 "scroll d .05 w"
+macro Button4 "zoom 0.70711"
+macro Button5 "zoom 1.41421"
