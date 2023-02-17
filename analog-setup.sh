@@ -97,7 +97,7 @@ else
 	git pull
 fi
 python3 -m pip install --upgrade --no-cache-dir volare
-volare enable --pdk sky130 $VOLARE_H
+python3 -m volare enable --pdk sky130 $VOLARE_H
 
 # Apply SPICE modellib reducer
 # ----------------------------
