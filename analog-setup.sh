@@ -34,7 +34,7 @@ export KLAYOUT_VERSION=0.28.5
 # This selects which sky130 PDK flavor (A=sky130A, B=sky130B, all=both)  is installed
 export OPEN_PDK_ARGS="--with-sky130-variants=A"
 export PDK=sky130A
-export VOLARE_H=032b059033c4cf67f94c5b7f0a44d936b8ff5aae
+export VOLARE_H=e6f9c8876da77220403014b116761b0b2d79aab4
 
 # ---------------
 # Now go to work!
