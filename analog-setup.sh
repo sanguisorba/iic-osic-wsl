@@ -160,7 +160,7 @@ echo ">>>> Installing KLayout-$KLAYOUT_VERSION"
 wget https://www.klayout.org/downloads/Ubuntu-22/klayout_$KLAYOUT_VERSION-1_amd64.deb
 sudo apt -qq install -y ./klayout_$KLAYOUT_VERSION-1_amd64.deb
 rm klayout_$KLAYOUT_VERSION-1_amd64.deb
-pip install docopt pandas
+pip install docopt pandas gdsfactory
 
 # Install/update magic
 # --------------------
