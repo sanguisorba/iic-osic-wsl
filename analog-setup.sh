@@ -30,11 +30,11 @@ export SRC_DIR="$HOME/src"
 my_path=$(realpath "$0")
 my_dir=$(dirname "$my_path")
 export SCRIPT_DIR="$my_dir"
-export KLAYOUT_VERSION=0.28.5
+export KLAYOUT_VERSION=0.28.6
 # This selects which sky130 PDK flavor (A=sky130A, B=sky130B, all=both)  is installed
 export OPEN_PDK_ARGS="--with-sky130-variants=A"
 export PDK=sky130A
-export VOLARE_H=e6f9c8876da77220403014b116761b0b2d79aab4
+export VOLARE_H=0c37b7c76527929abfbdbd214df4bffcd260bf50
 
 # ---------------
 # Now go to work!
